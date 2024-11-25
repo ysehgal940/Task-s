@@ -65,9 +65,4 @@ public class Employee implements Comparable<Employee>{
 		
 	}
 	
-//	public int compareTo(Employee emp2) {
-//		return this.getEmployeeName().compareTo(emp2.getEmployeeName());
-//	}
-//	
-	
 }
