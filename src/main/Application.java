@@ -34,7 +34,29 @@ public class Application {
         list.add(e4);
         list.add(e5);
 
-        Collections.sort(list);
+          Comparator<Employee>comp=new Comparator<Employee>()
+        	{
+
+				@Override
+				public int compare(Employee o1, Employee o2) {
+					int Compare;
+					Compare=o1.getEmployeeName().compareTo(o2.getEmployeeName());
+					if(Compare!=0)return Compare;
+					
+				    Compare=o1.getDepartmentName().compareTo(o2.getDepartmentName());
+					if(Compare!=0)return Compare;
+					
+				    Compare=Double.compare(o1.getEmployeeSalary(),o2.getEmployeeSalary());
+					if(Compare!=0)return Compare;
+					
+				    return (o1.getDOB().compareTo(o2.getDOB()));
+				}
+        	
+        	};
+        
+        Collections.sort(list,comp);
+        
+       //Collections.sort(list);
         
         for (Employee e : list) {
             System.out.println(e.toString());
